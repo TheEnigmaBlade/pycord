@@ -708,6 +708,7 @@ class Option:
         self, input_type: Any, /, description: str = None, **kwargs
     ) -> None:
         self.name: Optional[str] = kwargs.pop("name", None)
+        self._parameter_name = self.name
         self.description = description or "No description provided"
         self.converter = None
         self.channel_types: List[SlashCommandOptionType] = kwargs.pop("channel_types", [])
